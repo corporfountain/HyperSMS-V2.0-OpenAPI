@@ -53,7 +53,7 @@ Thống nhất với mã hóa bộ ký tự UTF-8
 #### 2.4.1 Định dạng tiêu chuẩn của tiêu đề
 ``` JSON
 {
- "Content-Loại":"application/json",
+ "Content-Type":"application/json",
  "appId": 0101010,
  "timestamp": 1621503576000,
  "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMDAwMDE2ODMiLCJpYXQiOjE2MjE0OT"
@@ -63,7 +63,7 @@ Mô tả:
 
 Các tham số |Bắt buộc hay không|Mô tả
 :----: |:---- |:---
-Content-Loại |Tùy chọn |Loại yêu cầu, hiện chỉ hỗ trợ ứng dụng / json
+Content-Type |Tùy chọn |Loại yêu cầu, hiện chỉ hỗ trợ ứng dụng / json
 appId |Bắt buộc | Mã nhận dạng ID ứng dụng bên truy cập
 token |Bắt buộc | Mã thông báo token sau khi đăng nhập, chuỗi trống nếu chưa đăng nhập
 timestamp |Bắt buộc | Dấu thời gian UNIX hiện tại (mili giây)
@@ -106,14 +106,14 @@ msgArgs | Tùy chọn | Mô tả mở rộng tin nhắn trả về
 data |Bắt buộc | Giá trị trả lại của bản tin Trả về (ghi chú: các API khác nhau trả về loại giá trị khác nhau)
 
 
-## 3. API liên quan tới xác thực
+## 3. Hàm API liên quan tới xác thực
 
-### 3.1 API đăng nhập
+### 3.1 Hàm API đăng nhập
 - **Mô tả API:** Bên truy cập nhận được mã thông báo token toàn cầu thông qua API đăng nhập
 - **Địa chỉ API:** app/login
 
 
-#### 3.1.1 API đăng nhập
+#### 3.1.1 Các tham số của yêu cầu
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;appId |string | Bắt buộc | Access party application ID
@@ -162,7 +162,7 @@ Ví dụ:
 - **Mô tả API:** Thông tin thương hiệu mới
 - **Địa chỉ API:** app/brandname/add
 
-#### 4.1.1 Các tham số yêu cầu
+#### 4.1.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -343,7 +343,7 @@ Ví dụ:
 }
 ```
 
-### 4.4  API vô hiệu hóa Thương hiệu
+### 4.4  Hàm API vô hiệu hóa Thương hiệu
 - **Mô tả API:** Việc sắp xếp dữ liệu thương hiệu khi ngoại tuyến không hợp lệ
 - **Địa chỉ API:** app/brandname/invalid
 
@@ -392,11 +392,11 @@ Ví dụ:
 
 ## 5. Hàm API liên quan tới Mẫu Template 
 
-### 5.1 API tạo Mẫu template
+### 5.1 Hàm API tạo Mẫu template
 - **Mô tả API:** Thông tin mẫu template mới
 - **Địa chỉ API:** app/template/add
 
-#### 5.1.1 API đăng nhập
+#### 5.1.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -410,7 +410,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 
 
 
-Ví dụ yêu cầu:
+Ví dụ về 1 yêu cầu:
 
 - **Mẫu template bình thường**
 
@@ -466,7 +466,7 @@ Ví dụ:
 ```
 
 
-### 5.2 API chỉnh sửa Mẫu template
+### 5.2 Hàm API chỉnh sửa Mẫu template
 - **Mô tả API:** Chỉnh sửa thông tin mẫu template
 - **Địa chỉ API:** app/template/edit
 
@@ -484,7 +484,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;content |string | Tùy chọn | Nội dung mẫu (hỗ trợ tối đa 5 định dạng {chỉ số} thông số động)
 
 
-Ví dụ yêu cầu:
+Ví dụ về 1 yêu cầu:
 
 ``` JSON
 {
@@ -521,7 +521,7 @@ Ví dụ:
 ```
 
 
-### 5.3 API truy vấn Mẫu template phân trang 
+### 5.3 Hàm API truy vấn Mẫu template phân trang 
 - **Mô tả API:** truy vấn Dữ liệu mẫu theo các điều kiện cụ thể, hỗ trợ phân trang
 - **Địa chỉ API:** app/template/query
 
@@ -600,7 +600,7 @@ Ví dụ:
 ```
 
 
-### 5.4 API chi tiết mẫu
+### 5.4 Hàm API truy vấn chi tiết Mẫu template
 - **Mô tả API:** Truy vấn chi tiết mẫu theo mã mẫu, bao gồm thông tin phê duyệt
 - **Địa chỉ API:** app/template/info
 
@@ -613,7 +613,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;code |string |Bắt buộc |Mã mẫu template
 
 
-Ví dụ yêu cầu:
+Ví dụ về 1 yêu cầu:
 
 ``` JSON
 {
@@ -668,7 +668,7 @@ Ví dụ:
 }
 ```
 
-### 5.5 API vô hiệu hóa mẫu
+### 5.5 Hàm API vô hiệu hóa Mẫu template
 - **Mô tả API:**  Dữ liệu mẫu ngoại tuyến và không hợp lệ
 - **Địa chỉ API:** app/template/invalid
 
@@ -715,9 +715,9 @@ Ví dụ:
 
 
 
-## 6. API liên quan tới Gửi
+## 6. Hàm API liên quan tới Gửi
 
-### 6.1 API Gửi
+### 6.1 Hàm API Gửi
 - **Mô tả API:** Gửi tới một số
 - **Địa chỉ API:** app/send
 
@@ -732,7 +732,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;smsTemplateCode |string | Bắt buộc | Mã mẫu SMS template
 &emsp;subId |string | Bắt buộc | Gửi tới số
 &emsp;param |array | Tùy chọn | Bộ các giá trị tham số động. Lưu ý: Thứ tự phải tương ứng với tham số động (chỉ mục) trong mẫu template
-&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
+&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử bởi Viettel) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -795,11 +795,11 @@ Ví dụ:
 ```
 
 
-### 6.2  API gửi nhiều số 
-- **Mô tả API:** Gửi nhiều số (hiện chỉ hỗ trợ 500 số)
+### 6.2  Hàm API gửi nhiều số 
+- **Mô tả API:** Gửi tới nhiều số (hiện chỉ hỗ trợ 500 số)
 - **Địa chỉ API:** app/send/batch
 
-#### 6.2.1 API đăng nhập
+#### 6.2.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -811,7 +811,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;subList |array | Bắt buộc | Gửi nhiều số
 &emsp;&emsp;subId |string | Bắt buộc | Gửi tới số
 &emsp;&emsp;param |array | Tùy chọn | Bộ các giá trị tham số động. Lưu ý: Thứ tự phải tương ứng với tham số động (chỉ mục) trong mẫu template
-&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
+&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử bởi Viettel) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -896,13 +896,13 @@ Ví dụ:
 }
 ```
 
-## 7. API liên quan tới Chiến dịch
+## 7. Hàm API liên quan tới Chiến dịch
 
-### 7.1 API tạo chiến dịch
+### 7.1 Hàm API tạo Chiến dịch
 - **Mô tả API:** Tạo thông tin nhiệm vụ chiến dịch và các quy tắc gửi
 - **Địa chỉ API:** app/campaign/add
 
-#### 7.1.1 API đăng nhập
+#### 7.1.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -913,7 +913,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;smsTemplateCode |string | Bắt buộc | Mã mẫu SMS template
 &emsp;name |string | Bắt buộc | Tên chiến dịch
 &emsp;description |string | Tùy chọn | Mô tả chiến dịch
-&emsp;property |object | Tùy chọn | 
+&emsp;property |object | Tùy chọn | Thuộc tính chiến dịch
 &emsp;&emsp;startTime |string | Bắt buộc | Thời gian bắt đầu chiến dịch (định dạng yyyy-MM-dd HH: mm: ss)
 &emsp;&emsp;endTime |string | Bắt buộc | Thời gian kết thúc chiến dịch (định dạng yyyy-MM-dd HH: mm: ss)
 &emsp;&emsp;sendPeriod |array | Tùy chọn | Giới hạn tập hợp các khoảng thời gian gửi
@@ -921,7 +921,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;&emsp;&emsp;end |string | Bắt buộc | Khoảng thời gian kết thúc (định dạng HH: mm: ss)
 &emsp;&emsp;subList |array | Bắt buộc |&nbsp; Lên đến 500 số
 &emsp;&emsp;&emsp;subId |string | Bắt buộc | Gửi tới số
-&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
+&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử bởi Viettel) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -966,7 +966,7 @@ Tên tham số | Loại | Bắt buộc hay không | Mô tả
 code |int |Bắt buộc |Mã trả về, xem “Phụ lục A” để biết chi tiết
 msg |string |Bắt buộc |&nbsp;
 data |object |Bắt buộc |&nbsp;
-&emsp;code |string |Bắt buộc | Mã hành động
+&emsp;code |string |Bắt buộc | Mã chiến dịch
 
 
 Ví dụ:
@@ -984,21 +984,21 @@ Ví dụ:
 
 
 
-### 7.2 API chỉnh sửa Chiến dịch
-- **Mô tả API:** Chỉnh sửa nhiệm vụ chiến dịch và quy tắc hoạt động
+### 7.2 Hàm API chỉnh sửa Chiến dịch
+- **Mô tả API:** Chỉnh sửa nhiệm vụ chiến dịch và quy tắc gửi
 - **Địa chỉ API:** app/campaign/edit
 
-#### 7.2.1 API đăng nhập
+#### 7.2.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string |Bắt buộc |Activity code
+&emsp;code |string |Bắt buộc |Mã chiến dịch
 &emsp;type |int | Tùy chọn |Loại sản phẩm; xem “Phụ lục B” để biết thêm chi tiết
 &emsp;templateCode |string | Tùy chọn | Mã mẫu HyperSMS [phiên bản V2.0 hiện không được hỗ trợ]
 &emsp;smsTemplateCode |string | Tùy chọn | Mã mẫu SMS template
-&emsp;name |string | Tùy chọn | Tên sự kiện
+&emsp;name |string | Tùy chọn | Tên chiến dịch
 &emsp;description |string | Tùy chọn | Mô tả chiến dịch
 &emsp;property |object | Tùy chọn | Thuộc tính chiến dịch
 &emsp;&emsp;startTime |string | Tùy chọn | Thời gian bắt đầu chiến dịch (định dạng yyyy-MM-dd HH: mm: ss)
@@ -1008,7 +1008,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;&emsp;&emsp;end |string | Tùy chọn | Khoảng thời gian kết thúc (định dạng HH: mm: ss)
 &emsp;&emsp;subList |array | Tùy chọn |&nbsp;  Lên đến 500 số
 &emsp;&emsp;&emsp;subId |string | Tùy chọn | Gửi tới số
-&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
+&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử bởi Viettel) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -1054,7 +1054,7 @@ Tên tham số | Loại | Bắt buộc hay không | Mô tả
 code |int |Bắt buộc |Mã trả về, xem “Phụ lục A” để biết chi tiết
 msg |string |Bắt buộc |&nbsp;
 data |object |Bắt buộc |&nbsp;
-&emsp;code |string |Bắt buộc |Activity code
+&emsp;code |string |Bắt buộc |Mã chiến dịch
 
 
 Ví dụ:
@@ -1070,21 +1070,21 @@ Ví dụ:
 }
 ```
 
-### 7.3 API truy vấn chiến dịch phân trang
+### 7.3 Hàm API truy vấn Chiến dịch phân trang
 - **Mô tả API:** Truy vấn dữ liệu hoạt động theo các điều kiện cụ thể, hỗ trợ phân trang
 - **Địa chỉ API:** app/campaign/query
 
-#### 7.3.1 API đăng nhập
+#### 7.3.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string |Tùy chọn |Campaign code
+&emsp;code |string |Tùy chọn |Mã chiến dịch
 &emsp;type |int | Tùy chọn |Loại sản phẩm; xem “Phụ lục B” để biết thêm chi tiết
 &emsp;templateCode |string | Tùy chọn | Mã mẫu HyperSMS [phiên bản V2.0 hiện không được hỗ trợ]
 &emsp;smsTemplateCode |string | Tùy chọn | Mã mẫu SMS template
-&emsp;name |string | Tùy chọn | Campaign name (support fuzzy search)
+&emsp;name |string | Tùy chọn | Tên chiến dịch
 &emsp;currPage |int | Bắt buộc | Số trang hiện tại, giá trị mặc định là 1
 &emsp;pageSize |int | Bắt buộc | Số lượng mục trên mỗi trang, giá trị mặc định là 10
 
@@ -1112,13 +1112,13 @@ msg |string |Bắt buộc |&nbsp;
 data |object |Bắt buộc |&nbsp;
 &emsp;totalCount |int |Bắt buộc |Số tổng
 &emsp;totalPage |int |Bắt buộc |Tổng số trang
-&emsp;list |array |Bắt buộc |Query results
-&emsp;&emsp;code |string |Bắt buộc |Campaign code
+&emsp;list |array |Bắt buộc |Kết quả truy vấn
+&emsp;&emsp;code |string |Bắt buộc |Mã chiến dịch
 &emsp;&emsp;type |int | Bắt buộc |Loại sản phẩm; xem “Phụ lục B” để biết thêm chi tiết
 &emsp;&emsp;templateCode |string | Tùy chọn | Mã mẫu HyperSMS [phiên bản V2.0 hiện không được hỗ trợ]
 &emsp;&emsp;smsTemplateCode |string | Tùy chọn | Mã mẫu SMS template
-&emsp;&emsp;name |string | Bắt buộc | Campaign name
-&emsp;&emsp;description |string | Tùy chọn | Campaign description
+&emsp;&emsp;name |string | Bắt buộc | Tên chiến dịch
+&emsp;&emsp;description |string | Tùy chọn | Mô tả chiến dịch
 &emsp;&emsp;createTime |long | Bắt buộc | Tạo dấu thời gian (mili giây)
 &emsp;&emsp;status |int | Bắt buộc | Trạng thái dữ liệu, Xem “Phụ lục D” để biết chi tiết
 
@@ -1151,8 +1151,8 @@ Ví dụ:
 ```
 
 
-### 7.4 API chi tiết Chiến dịch 
-- **Mô tả API:** Truy vấn chi tiết sự kiện theo mã chiến dịch, bao gồm thông tin sự kiện cơ bản, thông tin quy tắc, mục tiêu gửi và thông tin phê duyệt
+### 7.4 Hàm API truy vấn chi tiết Chiến dịch 
+- **Mô tả API:** Truy vấn chi tiết chiến dịch theo mã chiến dịch, bao gồm thông tin sự kiện cơ bản, thông tin quy tắc, mục tiêu gửi và thông tin phê duyệt
 - **Địa chỉ API:** app/campaign/info
 
 #### 7.4.1 Các tham số của yêu cầu
@@ -1161,7 +1161,7 @@ Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string |Bắt buộc |Campaign code
+&emsp;code |string |Bắt buộc |Mã chiến dịch
 
 
 Ví dụ yêu cầu:
@@ -1183,15 +1183,15 @@ Tên tham số | Loại | Bắt buộc hay không | Mô tả
 code |int |Bắt buộc |Mã trả về, xem “Phụ lục A” để biết chi tiết
 msg |string |Bắt buộc |&nbsp;
 data |object |Bắt buộc |&nbsp;
-&emsp;code |string |Bắt buộc |Campaign code code
+&emsp;code |string |Bắt buộc |Mx chiến dịch
 &emsp;type |int | Bắt buộc |Loại sản phẩm; xem “Phụ lục B” để biết thêm chi tiết
 &emsp;templateCode |string | Tùy chọn | Mã mẫu HyperSMS [phiên bản V2.0 hiện không được hỗ trợ]
 &emsp;smsTemplateCode |string | Tùy chọn | Mã mẫu SMS template
-&emsp;name |string | Bắt buộc | Tên hành động
+&emsp;name |string | Bắt buộc | Tên chiến dịch
 &emsp;description |string | Tùy chọn | Mô tả chiến dịch
 &emsp;createTime |long | Bắt buộc | Tạo dấu thời gian (mili giây)
-&emsp;status |int | Bắt buộc | Campaign data status See "Appendix D" for details
-&emsp;property |object | Tùy chọn | Campaign rule description
+&emsp;status |int | Bắt buộc | Trạng tháu dữ liệu chiến dịch, xem "Phụ lục D" để biết chi tiết
+&emsp;property |object | Tùy chọn | Thuộc tính chiến dịch
 &emsp;&emsp;startTime |string | Tùy chọn | Thời gian bắt đầu chiến dịch (định dạng yyyy-MM-dd HH: mm: ss)
 &emsp;&emsp;endTime |string | Tùy chọn | Thời gian kết thúc chiến dịch (định dạng yyyy-MM-dd HH: mm: ss)
 &emsp;&emsp;sendPeriod |array | Tùy chọn | Giới hạn tập hợp các khoảng thời gian gửi
@@ -1250,11 +1250,11 @@ Ví dụ:
 }
 ```
 
-### 7.5 API vô hiệu hóa chiến dịch
-- **Mô tả API:** Chiến dịch không hợp lệ (Lưu ý: Các hoạt động đang diễn ra không thể bị vô hiệu)
+### 7.5 Hàm API vô hiệu hóa Chiến dịch
+- **Mô tả API:** Chiến dịch không hợp lệ (Lưu ý: Các chiến dịch đang diễn ra không thể bị vô hiệu)
 - **Địa chỉ API:** app/campaign/invalid
 
-#### 7.5.1 API đăng nhập
+#### 7.5.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -1296,17 +1296,17 @@ Ví dụ:
 ```
 
 
-### 7.6 API hủy Chiến dịch
+### 7.6 Hàm API hủy Chiến dịch
 - **Mô tả API:** Hủy tác vụ đang hoạt động đang được thực thi
 - **Địa chỉ API:** app/campaign/cancel
 
-#### 7.6.1 API đăng nhập
+#### 7.6.1 Các tham số của yêu cầu
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string | Bắt buộc | Activity code
+&emsp;code |string | Bắt buộc | Mã chiến dịch
 
 
 Ví dụ về 1 yêu cầu:
@@ -1342,7 +1342,7 @@ Ví dụ:
 ```
 
 
-### 7.7 API Tạm dừng nhiệm vụ của chiến dịch 
+### 7.7 Hàm API tạm dừng nhiệm vụ của Chiến dịch 
 - **Mô tả API:** Tạm dừng nhiệm vụ Chiến dịch đang được thực thi
 - **Địa chỉ API:** app/campaign/pause
 
@@ -1352,7 +1352,7 @@ Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string | Bắt buộc | Campaign code
+&emsp;code |string | Bắt buộc | Mã chiến dịch
 
 
 Ví dụ về 1 yêu cầu:
@@ -1389,7 +1389,7 @@ Ví dụ:
 
 
 
-### 7.8 API Tiếp tục nhiệm vụ chiến dịch
+### 7.8 Hàm API tiếp tục nhiệm vụ Chiến dịch
 - **Mô tả API:** Tiếp tục các nhiệm vụ chiến dịch đang bị tạm ngưng
 - **Địa chỉ API:** app/campaign/resume
 
@@ -1399,7 +1399,7 @@ Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
 &emsp;sign |string | Tùy chọn | Chữ ký, Xem “Phụ lục G” để biết chi tiết
 timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
-&emsp;code |string | Bắt buộc | Mã hành động
+&emsp;code |string | Bắt buộc | Mã chiến dịch
 
 
 Ví dụ về 1 yêu cầu:
@@ -1440,7 +1440,7 @@ Ví dụ:
 
 ### 8.1 API gửi lại trạng thái phê duyệt
 - **Mô tả API:** Dữ liệu cần được phê duyệt, khi trạng thái phê duyệt thay đổi, lệnh gọi lại sẽ được nhận thông qua callbackApproveUrl do bên truy cập cung cấp
-- **Địa chỉ API:** Được cung cấp bởi bên truy cập
+- **Địa chỉ API:** Được cung cấp do bên truy cập
 
 #### 8.1.1 Các tham số của yêu cầu
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
@@ -1492,9 +1492,9 @@ Ví dụ:
 
 
 
-### 8.2 API gọi lại trạng thái Gửi và tải xuống
+### 8.2 API gọi lại trạng thái Gửi và Tải xuống
 - **Mô tả API:** Sau khi tác vụ gửi được thực thi, trạng thái gửi và tải xuống sẽ được gọi lại thông qua callbackSendUrl do bên truy cập chỉ định
-- **Địa chỉ API:** Được cung cấp bởi bên truy cập
+- **Địa chỉ API:** Được cung cấp do bên truy cập
 
 #### 8.2.1 Các tham số của yêu cầu
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
