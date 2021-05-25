@@ -732,7 +732,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;smsTemplateCode |string | Bắt buộc | Mã mẫu SMS template
 &emsp;subId |string | Bắt buộc | Gửi tới số
 &emsp;param |array | Tùy chọn | Bộ các giá trị tham số động. Lưu ý: Thứ tự phải tương ứng với tham số động (chỉ mục) trong mẫu template
-&emsp;encodeLoại |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
+&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -744,7 +744,7 @@ Ví dụ về 1 yêu cầu:
   "type":2,
   "smsTemplateCode":"001aaab",
   "subId":"091313123123",
-  "encodeLoại": 0,
+  "encodeType": 0,
   "timestamp": 1621503576000,
   "sign": "600e5d07f445be432d86d9271fb1df9b1"
 }
@@ -759,7 +759,7 @@ Ví dụ về 1 yêu cầu:
   "smsTemplateCode":"001aaab",
   "subId":"091313123123",
   "param": ["0","2"]
-  "encodeLoại": 0,
+  "encodeType": 0,
   "timestamp": 1621503576000,
   "sign": "600e5d07f445be432d86d9271fb1df9b1"
 }
@@ -811,7 +811,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;subList |array | Bắt buộc | Gửi nhiều số
 &emsp;&emsp;subId |string | Bắt buộc | Gửi tới số
 &emsp;&emsp;param |array | Tùy chọn | Bộ các giá trị tham số động. Lưu ý: Thứ tự phải tương ứng với tham số động (chỉ mục) trong mẫu template
-&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: operator encryption) The default is 0
+&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -921,7 +921,7 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;&emsp;&emsp;end |string | Bắt buộc | Khoảng thời gian kết thúc (định dạng HH: mm: ss)
 &emsp;&emsp;subList |array | Bắt buộc |&nbsp; Lên đến 500 số
 &emsp;&emsp;&emsp;subId |string | Bắt buộc | Gửi tới số
-&emsp;&emsp;&emsp;encodeLoại |int | Tùy chọn | Tùy chọn (0: plaintext, 1: operator encryption) The default is 0
+&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
@@ -1006,9 +1006,9 @@ timestamp |long |Bắt buộc |Dấu thời gian UNIX hiện tại (mili giây)
 &emsp;&emsp;sendPeriod |array | Tùy chọn | Giới hạn tập hợp các khoảng thời gian gửi
 &emsp;&emsp;&emsp;start |string | Tùy chọn | Khoảng thời gian bắt đầu (định dạng HH: mm: ss)
 &emsp;&emsp;&emsp;end |string | Tùy chọn | Khoảng thời gian kết thúc (định dạng HH: mm: ss)
-&emsp;&emsp;subList |array | Tùy chọn |&nbsp; Up to 500 numbers
+&emsp;&emsp;subList |array | Tùy chọn |&nbsp;  Lên đến 500 số
 &emsp;&emsp;&emsp;subId |string | Tùy chọn | Gửi tới số
-&emsp;&emsp;&emsp;encodeLoại |int | Tùy chọn | Tùy chọn (0: plaintext, 1: operator encryption) The default is 0
+&emsp;&emsp;&emsp;encodeType |int | Tùy chọn | Tùy chọn (0: plaintext, 1: mã hóa toán tử) Giá trị mặc định là 0
 
 
 Ví dụ về 1 yêu cầu:
