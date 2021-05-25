@@ -350,7 +350,7 @@ Example:
 - **API description:** Collocation of brand data offline is invalid
 - **API address:** app/brandname/invalid
 
-#### 4.3.1 Request parameters
+#### 4.4.1 Request parameters
   
 Parameter name |Type |Required or not |Description
 :---- |:--- |:------ |:---
@@ -370,7 +370,7 @@ Example request:
 
 ```
 
-#### 4.3.2 Return results
+#### 4.4.2 Return results
 
 Parameter name | Type | Required or not | Description
 :---- |:--- |:------ |:---

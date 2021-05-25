@@ -347,7 +347,7 @@ Ví dụ:
 - **Mô tả API:** Việc sắp xếp dữ liệu thương hiệu khi ngoại tuyến không hợp lệ
 - **Địa chỉ API:** app/brandname/invalid
 
-#### 4.3.1 Các tham số của yêu cầu 
+#### 4.4.1 Các tham số của yêu cầu 
   
 Tên tham số |Loại |Bắt buộc hay không |Mô tả
 :---- |:--- |:------ |:---
@@ -367,7 +367,7 @@ Ví dụ về 1 yêu cầu:
 
 ```
 
-#### 4.3.2 Giá trị trả về
+#### 4.4.2 Giá trị trả về
 
 Tên tham số | Loại | Bắt buộc hay không | Mô tả
 :---- |:--- |:------ |:---
