@@ -916,7 +916,7 @@ timestamp |long |Required |Current UNIX timestamp (milliseconds)
 &emsp;smsTemplateCode |string | Required | SMS template code
 &emsp;name |string | Required | Campaign name
 &emsp;description |string | Optional | Campaign description
-&emsp;property |object | Optional | Activity description
+&emsp;property |object | Optional | Campaign description
 &emsp;&emsp;startTime |string | Required | Campaign start time (format yyyy-MM-dd HH:mm:ss)
 &emsp;&emsp;endTime |string | Required | Campaign end time (format yyyy-MM-dd HH:mm:ss)
 &emsp;&emsp;sendPeriod |array | Optional | Limit the set of sending intervals
@@ -969,7 +969,7 @@ Parameter name | Type | Required or not | Description
 code |int |Required |Response code, see "Appendix A" for details
 msg |string |Required |&nbsp;
 data |object |Required |&nbsp;
-&emsp;code |string |Required |Activity code
+&emsp;code |string |Required |Campaign code
 
 
 Example:
@@ -997,11 +997,11 @@ Parameter name |Type |Required or not |Description
 :---- |:--- |:------ |:---
 &emsp;sign |string | Optional | Signature See "Appendix G" for details
 timestamp |long |Required |Current UNIX timestamp (milliseconds)
-&emsp;code |string |Required |Activity code
+&emsp;code |string |Required |Campaign code
 &emsp;type |int | Optional |Product type; see "Appendix B" for details
 &emsp;templateCode |string | Optional | HyperSMS template code [V2.0 version not currently supported]
 &emsp;smsTemplateCode |string | Optional | SMS template code
-&emsp;name |string | Optional | Event name
+&emsp;name |string | Optional | Campaign name
 &emsp;description |string | Optional | Campaign description
 &emsp;property |object | Optional | Campaign description
 &emsp;&emsp;startTime |string | Optional | Campaign start time (format yyyy-MM-dd HH:mm:ss)
@@ -1057,7 +1057,7 @@ Parameter name | Type | Required or not | Description
 code |int |Required |Response code, see "Appendix A" for details
 msg |string |Required |&nbsp;
 data |object |Required |&nbsp;
-&emsp;code |string |Required |Activity code
+&emsp;code |string |Required |Campaign code
 
 
 Example:
@@ -1190,7 +1190,7 @@ data |object |Required |&nbsp;
 &emsp;type |int | Required |Product type; see "Appendix B" for details
 &emsp;templateCode |string | Optional | HyperSMS template code [V2.0 version not currently supported]
 &emsp;smsTemplateCode |string | Optional | SMS template code
-&emsp;name |string | Required | Activity name
+&emsp;name |string | Required | Campaign name
 &emsp;description |string | Optional | Campaign description
 &emsp;createTime |long | Required | Create timestamp (milliseconds)
 &emsp;status |int | Required | Campaign data status See "Appendix D" for details
@@ -1309,7 +1309,7 @@ Parameter name |Type |Required or not |Description
 :---- |:--- |:------ |:---
 &emsp;sign |string | Optional | Signature See "Appendix G" for details
 timestamp |long |Required |Current UNIX timestamp (milliseconds)
-&emsp;code |string | Required | Activity code
+&emsp;code |string | Required | Campaign code
 
 
 Example request:
@@ -1402,7 +1402,7 @@ Parameter name |Type |Required or not |Description
 :---- |:--- |:------ |:---
 &emsp;sign |string | Optional | Signature See "Appendix G" for details
 timestamp |long |Required |Current UNIX timestamp (milliseconds)
-&emsp;code |string | Required | Activity code
+&emsp;code |string | Required | Campaign code
 
 
 Example request:
@@ -1532,7 +1532,7 @@ Parameter name						|Type		|Required or not	|Description
 code |int |Required |Response code, see "Appendix A" for details
 msg							|string		|Required		|&nbsp;
 
-示例：
+Example request：
 
 ``` JSON
 {
