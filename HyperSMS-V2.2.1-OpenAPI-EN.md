@@ -48,8 +48,8 @@ callbackSendUrl | Sending status receipt address | Provided by the accessing par
 
 ### 1.3 Unified access entrance:
 
-- Test-ENV: http://client.vn-vtt-test.corporfountain.com/openapi/v2/
-- Prod-ENV: https://open.vnvtt-hypersms.corporfountain.com/openapi/v2/
+- Test-ENV: http://hyperfast.vn-vtt-test.corporfountain.com/hyper_fast/
+- Prod-ENV: https://openapi.viettel.hypersms.vn/v2/
 
 Note: The above address may change, please confirm with the service party!
 
