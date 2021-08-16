@@ -48,8 +48,8 @@ callbackSendUrl        |发送状态回执地址	| 开户前由接入方提供
 
 ### 1.3 统一访问入口：
 
-- Test: http://client.vn-vtt-test.corporfountain.com/openapi/v2/
-- Prod: https://open.vnvtt-hypersms.corporfountain.com/openapi/v2/
+- Test: http://hyperfast.vn-vtt-test.corporfountain.com/hyper_fast/
+- Prod: https://openapi.viettel.hypersms.vn/v2/
 
 注: 上述地址可能会变，烦请跟服务方确认!
 
