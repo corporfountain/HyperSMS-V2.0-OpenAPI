@@ -44,8 +44,8 @@ callbackSendUrl |	Gửi địa chỉ nhận trạng thái	 |Được cung cấp 
 
 ### 1.3 Cổng truy cập thống nhất:
 
-- Test-ENV: http://client.vn-vtt-test.corporfountain.com/openapi/v2/
-- Prod-ENV: https://open.vnvtt-hypersms.corporfountain.com/openapi/v2/
+- Test-ENV: http://hyperfast.vn-vtt-test.corporfountain.com/hyper_fast/
+- Prod-ENV: https://openapi.viettel.hypersms.vn/v2/
 
 Ghi chú: địa chỉ bên trên có thể thay đổi, vui lòng xác nhận với đầu mối của Viettel.
 
