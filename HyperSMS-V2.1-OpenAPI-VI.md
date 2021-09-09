@@ -97,7 +97,7 @@ Mô tả:
 
 Tham số			 |Bắt buộc hay không	|Mô tả                
 :----:		 |:----	    |:---
-data  |Required	| Nội dung yêu cầu bắt buộc là chuỗi JSON;(Lưu ý: Nếu gửi yêu cầu theo kiểu Ride, header phải chỉ định isTokenRide = true)
+data  |Required	| Escape string (Request Body);(Lưu ý: Nếu gửi yêu cầu theo kiểu Ride, header phải chỉ định isTokenRide = true)
 
 
 #### 2.4.4 Định dạng tiêu chuẩn phần thân của bản tin phản hồi
