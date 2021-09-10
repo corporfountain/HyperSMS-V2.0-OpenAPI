@@ -25,7 +25,7 @@ callbackSendUrl |	Gửi địa chỉ nhận trạng thái	 |Được cung cấp 
 1. Bên truy cập ứng dụng gọi API đăng nhập để lấy mã thông qua appId / appSecret
 2.	Bằng cách chỉ định mã thông báo token trong tiêu đề; sau đó gọi các API khác như mong muốn
 3.	Giá trị Sign cần được chỉ rõ khi gọi mỗi hàm nghiệp vụ kinh doanh API, và  thủ tục tính toán chi tiết như trong “phụ lục G”.
-4.  Nếu gửi yêu cầu theo kiểu Ride, chi tiết xem "2.4.3"(V2.1.safe) để biết định dạng yếu cầu
+4.  Nếu gửi yêu cầu theo kiểu Ride, chi tiết xem "2.4.3"(V2.1.safe) để biết định dạng tiêu chuẩn yêu cầu
 5.	Nếu dữ liệu nghiệp vụ kinh doanh cần được phê duyệt, trạng thái phê duyệt sẽ được gọi lại thông qua địa chỉ “callbackApproveUrl”
 6.	Sau khi tác vụ gửi được xử lý, trạng thái báo cáo gửi DR và  trạng thái nhận tin Retrieve sẽ được gọi lại thông qua địa chỉ “callbackSendUrl”
 
@@ -70,7 +70,7 @@ token |Bắt buộc | Mã thông báo token sau khi đăng nhập, chuỗi trố
 isTokenRide	 |Optional	|yêu cầu theo kiểu Ride(true/false);Mặc định là false (V2.1.safe)
 timestamp |Bắt buộc | Dấu thời gian UNIX hiện tại (mili giây)
 
-#### 2.4.2 Định dạng chuẩn phần thân của yêu cầu
+#### 2.4.2 Định dạng tiêu chuẩn phần thân của yêu cầu
 ``` JSON
 {
  "key1": "Value1",
@@ -87,7 +87,7 @@ Tham số |Bắt buộc hay không |Mô tả
 sign |Bắt buộc | Giá trị Sign của yêu cầu này
 timestamp |Bắt buộc | Dấu thời gian UNIX hiện tại (mili giây)
 
-#### 2.4.3  Kiểu Ride định dạng yếu cầu (V2.1.safe)
+#### 2.4.3  Định dạng tiêu chuẩn phần thân của yêu cầu theo kiểu Ride(V2.1.safe)
 ``` JSON
 {
  "data" : "{\"key1\":\"Value1\",\"key2\":\"Value2\"\"timestamp\":1621503576000,\"isTokenRide\":false\"sign\":\"600e5d07f445be432d86d9271fb1df9b1\"}"
@@ -97,14 +97,14 @@ Mô tả:
 
 Tham số			 |Bắt buộc hay không	|Mô tả                
 :----:		 |:----	    |:---
-data  |Required	| Escape string (Request Body);(Lưu ý: Nếu gửi yêu cầu theo kiểu Ride, header phải chỉ định isTokenRide = true)
+data  |Bắt buộc	| Escape string (Request Body);(Lưu ý: Nếu gửi yêu cầu theo kiểu Ride, header phải chỉ định isTokenRide = true)
 
 
 #### 2.4.4 Định dạng tiêu chuẩn phần thân của bản tin phản hồi
 ``` JSON
 {
  "code": "100",
- "msg": "api.response.code.success"
+ "msg": "api.response.code.success",
  "msgArgs": null,
  "data": {
     "code": "123123123"
